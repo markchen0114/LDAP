@@ -39,7 +39,7 @@ EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'ADSI',@useself=N'False',@loca
 ```javascript
 SELECT * FROM OpenQuery ( 
   ADSI, 
-  'SELECT *
+  'SELECT pager, displayName, telephoneNumber, sAMAccountName,mail, mobile, facsimileTelephoneNumber, department, physicalDeliveryOfficeName, givenname
   FROM  ''LDAP://Domain.com'' 
   WHERE objectClass =  ''User'' and samaccountname=''UserId''
   ') AS tblADSI
