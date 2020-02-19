@@ -1,8 +1,8 @@
 # LDAP
 ### http://smlboby.blogspot.com/2016/03/ms-sql-server-ad.html
 
-# OPENROWSET
-## Step1 開啟 OPENROWSET 功能
+## OPENROWSET
+### Step1 開啟 OPENROWSET 功能
 ```javascript
 --開啟進階選項 1:開啟 / 0:關閉
 sp_configure 'show advanced options',1
@@ -15,7 +15,7 @@ sp_configure 'Ad Hoc Distributed Queries',1
 reconfigure
 ```
 
-## Step2 T-SQL
+### Step2 T-SQL
    [Account] : domain\account, ex. ABC\John
    [Password] : account password
    [Domain] : domain name, ex. ABC.com
@@ -28,14 +28,14 @@ select * from openrowset(
 )
 ```
 
-# OPENQUERY
-## Step1 新增LinkServer
+## OPENQUERY
+### Step1 新增LinkServer
 ```javascript
 EXEC master.dbo.sp_addlinkedserver @server = N'ADSI', @srvproduct=N'Active Directory Service Interfaces', @provider=N'ADSDSOObject', @datasrc=N'adsdatasource'
 EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'ADSI',@useself=N'False',@locallogin=NULL,@rmtuser=N'Domain\AdminId',@rmtpassword='AdminPwd'
 ```
 
-## Step2 T-SQL
+### Step2 T-SQL
 SELECT * FROM OpenQuery ( 
   ADSI, 
   'SELECT *
@@ -44,7 +44,7 @@ SELECT * FROM OpenQuery (
   ') AS tblADSI
 
 
-# 常用 AD 欄位
+## 常用 AD 欄位
 | Feild Name      | Description                       |
 | --------------- | --------------------------------- |
 | samaccountname  | Account id                        |
