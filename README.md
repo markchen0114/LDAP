@@ -1,5 +1,5 @@
 # LDAP
-### http://smlboby.blogspot.com/2016/03/ms-sql-server-ad.html
+### Reference http://smlboby.blogspot.com/2016/03/ms-sql-server-ad.html
 
 ## OPENROWSET
 ### Step1 開啟 OPENROWSET 功能
