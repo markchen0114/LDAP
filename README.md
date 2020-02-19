@@ -22,15 +22,15 @@ select * from openrowset(
 )
 
 常用 AD 欄位
-Feild Name     | Description
----------------|-------------
-samaccountname | Account id
-givenname      | Given name
-displayname    | Fullname (Last Name + First Name)
-department     | Department
-title          | Title
-mail           | Email
-sn             | Last Name
-company        | Company
-location       | Location
+| Feild Name      | Description                       |
+| --------------- | --------------------------------- |
+| samaccountname  | Account id                        |
+| givenname       | Given name                        |
+| displayname     | Fullname (Last Name + First Name) |
+| department      | Department                        |
+| title           | Title                             |
+| mail            | Email                             |
+| sn              | Last Name                         |
+| company         | Company                           |
+| location        | Location                          |
 
