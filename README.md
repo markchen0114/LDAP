@@ -36,13 +36,14 @@ EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'ADSI',@useself=N'False',@loca
 ```
 
 ### Step2 T-SQL
+```javascript
 SELECT * FROM OpenQuery ( 
   ADSI, 
   'SELECT *
   FROM  ''LDAP://Domain.com'' 
   WHERE objectClass =  ''User'' and samaccountname=''UserId''
   ') AS tblADSI
-
+```
 
 ## 常用 AD 欄位
 | Feild Name      | Description                       |
