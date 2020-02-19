@@ -2,15 +2,15 @@
 ### Reference http://smlboby.blogspot.com/2016/03/ms-sql-server-ad.html
 
 ## OPENROWSET
-### Step1 開啟 OPENROWSET 功能
+### Step1 Config OPENROWSET
 ```javascript
---開啟進階選項 1:開啟 / 0:關閉
+--Config advance options 1:OPEN / 0:CLOSE
 sp_configure 'show advanced options',1
 reconfigure
 ```
 
 ```javascript
---開啟openrowset功能 1:開啟 / 0:關閉
+--Config openrowset 1:OPEN / 0:CLOSE
 sp_configure 'Ad Hoc Distributed Queries',1
 reconfigure
 ```
@@ -19,7 +19,7 @@ reconfigure
    [Account] : domain\account, ex. ABC\John
    [Password] : account password
    [Domain] : domain name, ex. ABC.com
-   ※LDAP必須大寫
+   ※LDAP should be capital
 ```javascript
 select * from openrowset(
    'ADsDSOObject' --Provider
@@ -29,7 +29,7 @@ select * from openrowset(
 ```
 
 ## OPENQUERY
-### Step1 新增LinkServer
+### Step1 add LinkServer
 ```javascript
 EXEC master.dbo.sp_addlinkedserver @server = N'ADSI', @srvproduct=N'Active Directory Service Interfaces', @provider=N'ADSDSOObject', @datasrc=N'adsdatasource'
 EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'ADSI',@useself=N'False',@locallogin=NULL,@rmtuser=N'Domain\AdminId',@rmtpassword='AdminPwd'
@@ -45,7 +45,7 @@ SELECT * FROM OpenQuery (
   ') AS tblADSI
 ```
 
-## 常用 AD 欄位
+## AD Field Name
 | Feild Name      | Description                       |
 | --------------- | --------------------------------- |
 | samaccountname  | Account id                        |
