@@ -58,3 +58,6 @@ SELECT * FROM OpenQuery (
 | company         | Company                           |
 | location        | Location                          |
 
+
+## Trobble Shooting
+### To allow an ASP.NET page to SET an AD Password on account creation, I had to run "Active Directory Users and Computers", right-click the domain, select "Delegate Control". This opens a wizard which will allow you to grant the account IIS_IUSRS permissions to make changes to AD.
