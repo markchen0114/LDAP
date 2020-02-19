@@ -22,14 +22,15 @@ select * from openrowset(
 )
 
 常用 AD 欄位
-欄位名	說明
-samaccountname / AD帳號
-givenname / 名字
-displayname / Fullname (姓+名)
-department / 部門
-title / 職稱
-mail / Email
-sn / 姓氏
-company / 公司
-location / 位置
+Feild Name     | Description
+---------------|-------------
+samaccountname | Account id
+givenname      | Given name
+displayname    | Fullname (Last Name + First Name)
+department     | Department
+title          | Title
+mail           | Email
+sn             | Last Name
+company        | Company
+location       | Location
 
